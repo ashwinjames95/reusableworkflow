@@ -11,6 +11,7 @@ on:
         description: 'Second parameter'
         type: string
         default: "def "
+        
        
     
 jobs:
@@ -24,7 +25,7 @@ jobs:
            id: cid
         - name: Print combined  value in the caller function
           run:   |
-            output_value: '${{ steps.cid.outputs.combineoutput }}'
+            output_value: '${{ jobs.steps.cid.outputs.combineoutput }}'
  
         
         
