@@ -23,7 +23,7 @@ jobs:
            param2: ${{inputs.parameter2}}
            id: cid
         - name: Print combined  value in the caller function
-          run: echo '${{steps.cid.outputs.combineoutput}}'
+          run: echo '${{jobs.steps.cid.outputs.combineoutput}}'
  
         
         
