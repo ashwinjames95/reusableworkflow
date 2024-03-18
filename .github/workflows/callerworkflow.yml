@@ -16,16 +16,15 @@ on:
     
 jobs:
   combine:
-     runs-on: ubuntu-latest
-     steps:
-        - uses: ashwinjamescloud/ashwin1/.github/workflows/reusable.yml@main
-          with:
-           param1: ${{inputs.parameter1}}
-           param2: ${{inputs.parameter2}}
-           id: cid
-        - name: Print combined  value in the caller function
-          run:   |
-            output_value: '${{ jobs.steps.cid.outputs.combineoutput }}'
+    uses: ashwinjamescloud/ashwin1/.github/workflows/reusable.yml@main
+    with:
+      param1: ${{inputs.parameter1}}
+      param2: ${{inputs.parameter2}}
+    id: cid
+  print:   
+      runs-on: ubuntu-latest
+      name: Print combined  value in the caller function
+      run:  echo '${{ jobs.combine.cid.outputs.combineoutput }}'
  
         
         
