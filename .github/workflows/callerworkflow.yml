@@ -20,6 +20,10 @@ jobs:
     with:
       param1: ${{inputs.parameter1}}
       param2: ${{inputs.parameter2}}
+  print:
+    runs-on: ubuntu-latest
+    needs: combine
+    run: echo "${{needs.combine.outputs.combineoutput}}
    
 
  
