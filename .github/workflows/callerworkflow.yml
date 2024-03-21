@@ -23,7 +23,8 @@ jobs:
   print:
     runs-on: ubuntu-latest
     needs: combine
-    run: echo "${{needs.combine.outputs.combineoutput}}
+    steps:
+       - run: echo "${{needs.combine.outputs.combineoutput}}"
    
 
  
